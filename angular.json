@@ -3,5 +3,31 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "anirudh-ui": {
+      "projectType": "library",
+      "root": "projects/anirudh-ui",
+      "sourceRoot": "projects/anirudh-ui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/anirudh-ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/anirudh-ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/anirudh-ui/tsconfig.spec.json"
+          }
+        }
+      }
+    }
   }
 }
